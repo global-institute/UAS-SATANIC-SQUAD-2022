@@ -1,0 +1,231 @@
+/* CHANGE: html body, change "background" to adjust website background color */
+body, html {
+  font-family: Roboto, sans-serif;
+  margin: 0;
+  display: grid;
+  justify-items: center;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient( 150.6deg,  rgba(15,2,2,1) 11.2%, rgba(36,163,190,1) 200% );
+  /* background: linear-gradient(45deg, #190f2c, #200b30); */
+}
+
+/* CHANGE: change font */
+/* Fonts */
+.font-1 {
+  font-family: 'Radio Canada', sans-serif;
+}
+
+.font-2{
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Nav bar */
+img {
+	max-width: 100%;
+	height: auto;
+	vertical-align: middle;
+	display: inline-block;
+}
+
+.navbar  {
+  z-index: 99999;
+}
+
+/* Background Video */
+video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.video-wrapper {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width:100%; 
+  margin:auto; 
+  display:block; 
+  position: relative;
+}
+
+.header{
+  position: absolute;
+  color: white;
+  text-shadow: 1px 1px 8px rgba(0,0,0,0.6);
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center; 
+  width: 100%;
+  height: 100%;
+}
+
+/* Glitch Effect */
+/* Credit: https://codepen.io/aldrie/pen/PojGYLo*/
+:root {
+  --background: #060608;
+  --color: #FAFAFA;
+}
+
+.right {
+  text-align: right;
+  width: 100%;
+}
+
+.stack {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.stack span {
+  font-family: 'Radio Canada', sans-serif;
+  font-weight: bold;
+  grid-row-start: 1;
+  grid-column-start: 1;
+  font-size: 6rem;
+  --stack-height: calc(100% / var(--stacks) - 1px);
+  --inverse-index: calc(calc(var(--stacks) - 1) - var(--index));
+  --clip-top: calc(var(--stack-height) * var(--index));
+  --clip-bottom: calc(var(--stack-height) * var(--inverse-index));
+  clip-path: inset(var(--clip-top) 0 var(--clip-bottom) 0);
+  animation: stack 340ms cubic-bezier(.46,.29,0,1.24) 1 backwards calc(var(--index) * 120ms), glitch 2s ease infinite 2s alternate-reverse;
+}
+
+.stack span:nth-child(odd) { --glitch-translate: 8px; }
+.stack span:nth-child(even) { --glitch-translate: -8px; }
+
+@keyframes stack {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%);
+    text-shadow: -2px 3px 0 red, 2px -3px 0 blue;
+  };
+  60% {
+    opacity: 0.5;
+    transform: translateX(50%);
+  }
+  80% {
+    transform: none;
+    opacity: 1;
+    text-shadow: 2px -3px 0 red, -2px 3px 0 blue;
+  }
+  100% {
+    text-shadow: none;
+  }
+}
+
+@keyframes glitch {
+  0% {
+    text-shadow: -2px 3px 0 red, 2px -3px 0 blue;
+    transform: translate(var(--glitch-translate));
+  }
+  2% {
+    text-shadow: 2px -3px 0 red, -2px 3px 0 blue;
+  }
+  4%, 100% {  text-shadow: none; transform: none; }
+}
+
+/* Card */
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700");
+
+.card {
+  background: #ffffff;
+  border-radius: 4px;
+  box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.5);
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  border-radius: 20px;
+  position: relative;
+}
+
+.card h2 {
+  margin: 0;
+  padding: 0 1rem;
+}
+
+.card .title {
+  padding: 1rem;
+  text-align: right;
+  color: #000016;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.card .desc {
+  padding: 0.5rem 1rem;
+  font-size: 12px;
+}
+
+.card .actions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  padding: 0.5rem 1rem;
+}
+
+.card-text {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.title-total {
+  padding: 2.5em 1.5em 1.5em 1.5em;
+}
+
+path {
+  fill: white;
+}
+
+.img-avatar {
+  width: 100%;
+}
+
+/* CHANGE: change "background-image" to update about me image*/
+.avatar {
+  width: 100%;
+  height: 100%;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  background-position: bottom center;
+  background-size: cover;
+}
+
+button {
+  border: none;
+  background: none;
+  font-size: 24px;
+  color: #000016;
+  cursor: pointer;
+  transition:.5s;
+}
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* 
+{
+  scrollbar-width: thin;
+  scrollbar-color: #000000 #000000;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+/* CHANGE: change scroll bar color */
+*::-webkit-scrollbar-thumb {
+  background-color: #070430;
+}
