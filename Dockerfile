@@ -21,6 +21,6 @@ LABEL   MAINTENER="Muhammad Haromaen" \
         KELAS="TI SE P 2021"
 
 
-COPY html /usr/share/nginx/html
+COPY /usr/share/nginx/html
 
 EXPOSE 80 443
